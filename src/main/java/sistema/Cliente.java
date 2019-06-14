@@ -36,7 +36,7 @@ public class Cliente {
 				telefono == "") {
 					throw new ClienteIncompletoException();
 			}else {
-				
+				  
 				if(fechaDeNacimiento.isAfter(fechaDeHoy)){  
 					throw new FechaIncorrectaException(); 
 				}else {

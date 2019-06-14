@@ -3,7 +3,6 @@ package sistema;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
-import java.time.Period;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
