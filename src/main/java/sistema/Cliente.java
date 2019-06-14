@@ -1,7 +1,7 @@
 package sistema;
 
 import java.time.LocalDate;
-import java.time.Period;
+
 
 public class Cliente {
 	
@@ -36,13 +36,9 @@ public class Cliente {
 				telefono == "") {
 					throw new ClienteIncompletoException();
 			}else {
-<<<<<<< HEAD
-				  
-				if(fechaDeNacimiento.isAfter(fechaDeHoy)){  
-=======
-				
+
 				if(fechaDeNacimiento.isAfter(fechaDeHoy)){
->>>>>>> master
+
 					throw new FechaIncorrectaException(); 
 				}else {
 					if(fechaDeHoy.getYear()-fechaDeNacimiento.getYear() < 18) {
@@ -51,7 +47,9 @@ public class Cliente {
 						return new Cliente(idCliente, cuilCliente, nombres, apellido, direccion, fechaDeNacimiento, telefono);
 					}
 				}
-			}
+				
+			}	
+				
 	}
 
 

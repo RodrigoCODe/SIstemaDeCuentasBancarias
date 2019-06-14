@@ -54,15 +54,12 @@ class ClienteUnitTest {
 		assertThrows(ClienteMenorDeEdadException.class, () ->  Cliente.FactoryCliente(1, "20-26373646-2","Juan", "Perez","Arturo Illia 234", fechaNacimientoCliente, fechaDeHoy,  "0382512312355"));
 		
 		
-<<<<<<< HEAD
+
 		
 		System.out.println("La edad es : " + (fechaDeHoy.getYear() - fechaNacimientoCliente.getYear()));
 		  
 		
-=======
-		System.out.println("La edad es : " + periodo.getYears());
-		 
->>>>>>> master
+		
 	}
 	
 	
