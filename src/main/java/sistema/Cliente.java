@@ -36,8 +36,13 @@ public class Cliente {
 				telefono == "") {
 					throw new ClienteIncompletoException();
 			}else {
+<<<<<<< HEAD
 				  
 				if(fechaDeNacimiento.isAfter(fechaDeHoy)){  
+=======
+				
+				if(fechaDeNacimiento.isAfter(fechaDeHoy)){
+>>>>>>> master
 					throw new FechaIncorrectaException(); 
 				}else {
 					if(fechaDeHoy.getYear()-fechaDeNacimiento.getYear() < 18) {

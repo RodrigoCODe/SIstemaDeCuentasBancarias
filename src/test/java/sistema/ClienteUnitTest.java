@@ -19,7 +19,7 @@ class ClienteUnitTest {
 		
 		Cliente unCliente = Cliente.FactoryCliente(1,"20-26373646-2","Juan", "Perez","Arturo Illia 234", fechaNacimientoCliente,fechaDeHoy, "0382512312355");
 		
-		assertNotNull(unCliente);
+		assertNotNull(unCliente); 
 	}
 	
 	@Test
@@ -50,14 +50,19 @@ class ClienteUnitTest {
 		LocalDate fechaNacimientoCliente = LocalDate.of(2002, 10, 2);
 		
 		LocalDate fechaDeHoy = LocalDate.of(2018, 10, 20);
-		
+		 
 		assertThrows(ClienteMenorDeEdadException.class, () ->  Cliente.FactoryCliente(1, "20-26373646-2","Juan", "Perez","Arturo Illia 234", fechaNacimientoCliente, fechaDeHoy,  "0382512312355"));
 		
 		
+<<<<<<< HEAD
 		
 		System.out.println("La edad es : " + (fechaDeHoy.getYear() - fechaNacimientoCliente.getYear()));
 		  
 		
+=======
+		System.out.println("La edad es : " + periodo.getYears());
+		 
+>>>>>>> master
 	}
 	
 	
