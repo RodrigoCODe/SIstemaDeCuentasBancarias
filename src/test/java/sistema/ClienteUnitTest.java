@@ -62,6 +62,18 @@ class ClienteUnitTest {
 		
 	}
 	
+	@Test
+	@DisplayName("InstanciarClienteFechaIncorrecta")
+	public void InstanciarCliente_TodosLosAtributos_FechaIncorrectaException() {
+		
+		LocalDate fechaNacimientoCliente = LocalDate.of(2019, 10, 2);
+		
+		LocalDate fechaDeHoy = LocalDate.of(2018, 10, 20);
+		 
+		assertThrows(FechaIncorrectaException.class, () ->  Cliente.FactoryCliente(1, "20-26373646-2","Juan", "Perez","Arturo Illia 234", fechaNacimientoCliente, fechaDeHoy,  "0382512312355"));
+		
+	}
+	
 	
 
 }
