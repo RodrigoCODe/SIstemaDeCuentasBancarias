@@ -29,21 +29,24 @@ public class Cliente {
 	
 	
 	public static Cliente FactoryCliente(Integer idCliente, String cuilCliente, String nombres, String apellido, String direccion,
-			LocalDate fechaDeNacimiento, LocalDate fechaDeHoy, String telefono) throws ClienteIncompletoException, ClienteMenorDeEdadException {
+			LocalDate fechaDeNacimiento, LocalDate fechaDeHoy, String telefono) throws ClienteIncompletoException, ClienteMenorDeEdadException, FechaIncorrectaException {
 		
 			if(idCliente == null || idCliente <= 0 || cuilCliente == null || cuilCliente == "" || nombres == null || 
 				nombres == "" || apellido == null || apellido == "" || direccion == null || direccion == "" || telefono == null ||
 				telefono == "") {
 					throw new ClienteIncompletoException();
 			}else {
-				Period periodo = Period.between(fechaDeNacimiento, fechaDeHoy);
-				if(periodo.getYears() <18) {
-					throw new ClienteMenorDeEdadException();				
+				
+				if(fechaDeNacimiento.isAfter(fechaDeHoy)){  
+					throw new FechaIncorrectaException(); 
 				}else {
-					return new Cliente(idCliente, cuilCliente, nombres, apellido, direccion, fechaDeNacimiento, telefono);
+					if(fechaDeHoy.getYear()-fechaDeNacimiento.getYear() < 18) {
+						throw new ClienteMenorDeEdadException();	
+					}else {
+						return new Cliente(idCliente, cuilCliente, nombres, apellido, direccion, fechaDeNacimiento, telefono);
+					}
 				}
 			}
-		
 	}
 
 
