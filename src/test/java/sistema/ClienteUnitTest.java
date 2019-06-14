@@ -12,7 +12,7 @@ class ClienteUnitTest {
 
 	@Test
 	@DisplayName("InstanciarClienteTest")
-	public void InstanciarCliente_TodosLosAtributos_InstanciasCorrectas() throws ClienteIncompletoException, ClienteMenorDeEdadException {
+	public void InstanciarCliente_TodosLosAtributos_InstanciasCorrectas() throws ClienteIncompletoException, ClienteMenorDeEdadException, FechaIncorrectaException {
 		
 		LocalDate fechaNacimientoCliente = LocalDate.of(1970, 10, 2);
 		
@@ -20,7 +20,7 @@ class ClienteUnitTest {
 		
 		Cliente unCliente = Cliente.FactoryCliente(1,"20-26373646-2","Juan", "Perez","Arturo Illia 234", fechaNacimientoCliente,fechaDeHoy, "0382512312355");
 		
-		assertNotNull(unCliente);
+		assertNotNull(unCliente); 
 	}
 	
 	@Test
@@ -51,13 +51,13 @@ class ClienteUnitTest {
 		LocalDate fechaNacimientoCliente = LocalDate.of(2004, 10, 2);
 		
 		LocalDate fechaDeHoy = LocalDate.of(2018, 10, 20);
-		
+		 
 		assertThrows(ClienteMenorDeEdadException.class, () ->  Cliente.FactoryCliente(1, "20-26373646-2","Juan", "Perez","Arturo Illia 234", fechaNacimientoCliente, fechaDeHoy,  "0382512312355"));
 		
 		Period periodo = Period.between(fechaNacimientoCliente, fechaDeHoy);
 		
 		System.out.println("La edad es : " + periodo.getYears());
-		
+		 
 	}
 	
 	
